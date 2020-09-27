@@ -1,0 +1,388 @@
+/* reset ================================ */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 100%;
+  font-family: 'Hiragino Sans', sans-serif;
+  line-height: 1.7;
+  letter-spacing: 1px;
+}
+
+body {
+  margin: 0;
+  background-color: #f6faff;
+  color: #6c7686;
+}
+
+ul, li {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  display: block;
+  text-decoration: none;
+  color: #2d3133;
+  font-size: 14px;
+}
+
+a:hover {
+  transition: all 0.3s ease;
+}
+
+
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+}
+
+h1 {
+  font-weight: 600;
+}
+
+input {
+  font-family: inherit;
+  font-size: 100%;
+}
+
+/* top ================================ */
+.top-wrapper {
+  max-width: 1200px;
+  min-width: 920px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  padding: 60px;
+}
+
+.top-detail {
+  width: 36%;
+  min-width: 320px;
+  margin-top: -40px;
+}
+
+.top-detail .subtitle {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.top-detail .title {
+  font-size: 54px;
+  line-height: 66px;
+  letter-spacing: 2px;
+  margin-bottom: 24px;
+}
+
+.top-detail .description {
+  font-size: 14px;
+  line-height: 28px;
+  letter-spacing: 0.5px;
+  margin-bottom: 40px;
+}
+
+.top-detail .index-button {
+  width: 184px;
+  height: 48px;
+  text-align: center;
+  line-height: 45px;
+  font-weight: 600;
+  color: #42cea9;;
+  background-color: #ffffff;
+  border: 2px solid #58d2b2;
+  border-radius: 2px;
+}
+
+.top-detail .index-button:hover {
+  color: #ffffff;
+  background-color:  #58d2b2;
+}
+
+
+.index-button {
+  cursor: pointer;
+}
+
+.top-image {
+  width: 64%;
+  text-align: center;
+  overflow: hidden;
+}
+
+.top-image img {
+  width: 88%;
+}
+
+/* header ================================ */
+header {
+  height: 56px;
+  background-color: #ffffff;
+  border-bottom: 1px solid #f0f4f9;
+}
+
+.header-logo {
+  margin-left: 56px;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 56px;
+  color: #6c7686;
+  display: inline;
+}
+
+.header-logo:hover {
+  color: #58d2b2;
+}
+
+/* container ================================ */
+.container {
+  width: 70%;
+  min-width: 360px;
+  max-width: 1350px;
+  margin: 0 auto;
+  margin-top: 56px;
+}
+
+.container-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.container-header .new-button {
+  background: #80bcff;
+  border-radius: 30px;
+  font-size: 14px;
+  width: 120px;
+  height: 45px;
+  line-height: 43px;
+  text-align: center;
+  color: #ffffff;
+  border: 2px solid #80bcff;
+}
+.container-header .new-button:hover {
+  background-color: #ffffff;
+  color: #80bcff;
+  transition: all 0.3s ease;
+}
+
+.cancel-button {
+  margin-top: 16px;
+  margin-left: 2px;
+  font-weight: 600;
+  color: #bac6d3;
+  text-decoration: underline;
+  display: inline-block;
+}
+
+.cancel-button:hover {
+  color: #80bcff;
+}
+
+.container-header h1 {
+  font-size: 24px;
+}
+
+  /* 全体レイアウト */
+  /* 改行設定 */
+  /* 文字配置 */
+  /* font */
+  /* border,shape */
+  /* その他色・サイズ */
+/* index ================================ */
+.mytable{
+  /* table崩れ防止 */
+  display: table;
+  table-layout: fixed; 
+  border-collapse: collapse;
+  /* 改行設定 */
+  overflow: auto;
+  word-wrap: break-word;
+  word-break: keep-all;
+  /* 文字配置 */
+  align-items: center;
+  /* サイズ */
+  width: 100%;
+  /* borderと色 */
+  
+  background-color: white;
+}
+
+.ltop{
+  border-radius: 12px 0 0 0;
+}
+
+.rtop{
+  border-radius: 0 12px 0 0;
+}
+
+.mytable tr{
+  height: 60px;
+}
+.mytable td{
+  border: 1px solid #EFEFEF;
+  padding: 10px;
+}
+
+.mytable th{
+  /* 全体レイアウト */
+  /* 改行設定 */
+  /* 文字配置 */
+  text-align: center;
+  /* font */
+  color: #ffffff;
+  font-size: 20px;
+  /* border */
+  border: none;
+  /* border: 1px solid #EFEFEF; */
+  /* border-radius: 6px 6px 0px 0px; */
+    /* その他色 */
+  background-color: #b7cadc;
+}
+
+.col1{
+  text-align: center;
+  font-size: 10px;
+  width: 4%;
+}
+.col2{
+  width: 8%;
+}
+.col3{
+  font-weight: 700;
+  width: 15%;
+}
+
+.col4,.col5{
+  width: 30%;
+  max-width: 500px;
+  min-width: 50px;
+  font-size: 12px;
+  white-space: pre-line;
+}
+
+.col6, .col7, .col8{
+  width: 5%;
+  color: #8491a5;
+  border-left: none !important;
+  border-right: none !important;
+  font-size: 10px;
+}
+
+.col6 a, .col7 a, .col8 a{
+  /* 全体レイアウト */
+  display: inline-block;
+  /* 改行設定 */
+  /* 文字配置 */
+  padding: 2px 8px 2px 8px ;
+  text-align: center;
+  /* font */
+  color: #787d91;
+  font-size: 12px;
+  /* border,shape */
+  box-shadow: 0 3px 5px rgba(0, 0, 0, .3);
+  border-radius: 20%;
+    /* -webkit-box-shadow: 0 3px 5px rgba(0, 0, 0, .3); */
+  /* その他色・サイズ */
+  background-color: #e5fcfd;
+
+
+}
+
+.col6 a:hover, .col7 a:hover, .col8 a:hover{
+  color: #80bcff;
+  
+}
+
+.item-menu {
+  display: flex;
+}
+
+.item-menu form {
+  width: 60px;
+  text-align: center;
+}
+
+.item-menu form input {
+  font-size: 16px;
+  color: #bac6d3;
+  cursor: pointer;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  padding: 0;
+  border: none;
+  outline: none;
+  background: transparent;
+}
+
+.item-menu form input:hover {
+  color: #ff7f8c;
+  transition: all 0.3s ease;
+}
+
+/* new, edit ================================ */
+.item-form-wrapper {
+  background-color: #ffffff;
+  border: 1px solid #f0f4f9;
+  border-radius: 0px 0px 2px 2px;
+  padding: 32px;
+}
+
+.form-label {
+  font-size: 14px;
+  color: #8491a5;
+}
+
+.item-form-wrapper input[type="text"],
+.item-form-wrapper textarea {
+  width: 100%;
+  height: 40px;
+  margin-top: 2px;
+  margin-bottom: 24px;
+  padding: 12px 16px;
+  background-color: #fcfcfd;
+  border: 1px solid #bac6d3;
+  border-radius: 2px;
+  color: #2b546a;
+  font-size: 12px;
+}
+
+.item-form-wrapper input[type="submit"] {
+  display: block;
+  width: 120px;
+  height: 45px;
+  margin-top: 24px;
+  margin-left: auto;
+  border-radius: 30px;
+  font-size: 14px;
+  background-color: #80bcff;
+  color: #ffffff;
+  cursor: pointer;
+  outline: none;
+  border: 2px solid #80bcff;
+}
+
+.item-form-wrapper input[type="submit"]:hover {
+  background-color: #ffffff;
+  color: #80bcff;
+  transition: all 0.3s ease;
+}
+
+textarea{
+  resize: none;
+  width:100% !important;
+  height:100px !important;
+}
+
+.item-form-wrapper input::placeholder,
+.item-form-wrapper textarea::placeholder {
+  color: #AAA;
+}
+
+
+
+

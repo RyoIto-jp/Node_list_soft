@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>LIST APP</title>
+        <link rel="stylesheet" href="/css/style.css">
+        <script src="/send_url.js"></script>
+        <script>
+        function check(){
+            if(document.form1.name.value == "") {
+                alert("名前を入力してください");
+                return false;
+            }
+            if(document.form1.reg_user.value == "") {
+                alert("従業員Noを入力してください");
+                return false;
+            }
+            if(document.form1.softName.value == "") {
+                alert("ソフトウェア名称を入力してください");
+                return false;
+            }
+        } 
+        </script>
+    </head>
+    <body>
+        <%- include("./func2") %> 
+        <p> <% func_test() %></p>
+        <%- include("./top_menu.ejs") %>  
+        <div class="container">
+        <div class="container-header">
+            <h1>申請フォーム</h1>
+            <a href="/index" class="cancel-button">キャンセル</a>
+        </div>
+        <div class="item-form-wrapper">
+            <form action="/create" method="post" name="form1" onsubmit="return check()">
+                <p class="form-label">申請者の従業員No</p>
+                <input type="text" name="reg_user" placeholder="(例) AJ14013" pattern="^[0-9A-Za-z]+$">
+
+                <p class="form-label">ソフトウェア名称</p>
+                <input name="softName" value="" type="text" placeholder="(例) Panel4">
+
+                <p class="form-label">ソフトウェア概要</p>
+                <textarea id="sAbout" name="sAbout" placeholder="(例) 計測データの解析ソフト"></textarea>
+
+                <p class="form-label">利用目的(業務)</p>
+                <textarea id="sPurpose" name="sPurpose" placeholder="(例) 走行データを解析し、エンジン適合を行う"></textarea>
+
+                <input type="submit" value="更新する">
+            </form>
+        </div>
+        </div>
+    </body>
+
+
+</html>

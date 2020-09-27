@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>LIST APP</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="/send_url.js"></script>
+  </head>
+  <body>
+    <script>
+      function disp(myId) {
+        if (window.confirm("削除しますか？")) {
+          location.href = "/delete/" + myId;
+        } else {
+          window.alert("キャンセルされました");
+        }
+      }
+    </script>
+    <%- include("./top_menu.ejs") %>  
+    <div class="container">
+      <div class="container-header">
+        <h1>登録ソフト一覧(仮)</h1>
+        <a href="/new" class="new-button">+ 新規作成</a>
+      </div>
+
+        <table class='mytable'>
+          <th class='col1 ltop'>ID</th>
+          <th class='col2'>従業員No</th>
+          <th class='col3'>ソフト名</th>
+          <th class='col4'>ソフト概要</th>
+          <th class='col5'>業務目的</th>
+          <th class='col6'></th>
+          <th class='col7'></th>
+          <th class='col8 rtop'></th>
+          <% items.forEach((item) => { %>
+            <tr>
+                <td class='col1'><%= item.id %></td>
+                <td class='col2'><%= item.reg_user %></td>
+                <td class='col3'><%= item.softName %></td>
+                <td class='col4'><%= item.sAbout %></td>
+                <td class='col5'><%= item.sPurpose %></td>
+                
+              <div class="item-menu">
+                <td class='col6'>
+                  <a href="/edit/<%= item.id %>">
+                    編集
+                  </a>
+                </td>
+                <td class='col7'>
+                  <a href="/delete/<%= item.id %>" 
+                    onClick="disp('<%= item.id %>'); return false;" >
+                    削除</a>
+                </td>
+                <td class='col8'>完了</td>
+              </div>
+
+            </tr>
+          <% }) %>
+        </table>
+    </div>
+
+  </body>
+</html>
