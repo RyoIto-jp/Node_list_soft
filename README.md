@@ -2,7 +2,6 @@
 
 <link href="http://jasonm23.github.io/markdown-css-themes/markdown.css" rel="stylesheet"></link>
 
-
 ## Lesson1
 
 ### Node.js初期設定
@@ -208,8 +207,37 @@ Alt+Dでエクスプローラのアドレスバーへ移動
 cmdと打ち込んで押下
 エクスプローラのDirがカレントになる。
 
-### linux
+### unix
 
 win機能の有効化で、Linuxのサブシステムっぽいやつ
 MS StoreでUbuntuインストール（会社だと使えないか・・・）
 
+\\wsl$\Ubuntu\home\ryoito
+
+```shell
+explorer.exe .
+cd dir
+pwd
+ls
+touch
+```
+
+* move
+`mv {file|dir} dir`
+
+* rename
+`mv {filename} {filename(changed)}`
+
+*copy
+
+```shell
+cp {filename} {newfilename}
+cp -r コピーするディレクトリ名 新しいディレクトリ名
+```
+
+* delete
+
+```shell
+rm {filename}
+rm -r {dir}
+```
