@@ -1,0 +1,24 @@
+{
+  "name": "list-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "dependencies": {
+    "ejs": "^3.1.5",
+    "express": "^4.17.1",
+    "mysql": "^2.18.1"
+  },
+  "devDependencies": {
+    "electron": "1.4.13",
+    "electron-builder": "^22.8.1",
+    "gulp": "^4.0.2",
+    "gulp-ejs": "^5.1.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": ".\\node_modules\\.bin\\nodemon app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
