@@ -1,4 +1,4 @@
-node_module/electron/*
+node_module/electron/dist/*
 dist/*
 dist/builder-effective-config.yaml
 dist/latest.yml

@@ -260,3 +260,37 @@ CREATE TABLE list_app.items (
 ENGINE=InnoDB
 DEFAULT CHARSET=utf8mb4
 COLLATE=utf8mb4_unicode_ci;
+
+sqlite3
+
+node v12(~v10おそらく)が対応していない。N-APIがないみたいな。
+
+なので、下記Versionにダウングレードして対応。
+nodist 9.11.2
+npm install -g electron-builder@20.10.0
+npm install -D electron-builder@20.10.0
+
+消す
+package.json
+node_module
+
+scriptのstartを移植
+
+npm uninstall -g electron-builder
+npm uninstall -D electron-builder
+npm install -g electron-builder@20.10.0
+npm install -D electron-builder@20.10.0
+
+npm uninstall -g 
+npm uninstall -S | -D  してインストール
+
+nodist
+exeでnodist インストール。
+元のNode.jsをｱﾝｲﾝｽﾄｰﾙ
+nodist :now version@nodist
+nodist dist :Available Versions
+nodist + 9.11.2 :DL
+nodist 9.11.2	:activate
+node -v
+
+

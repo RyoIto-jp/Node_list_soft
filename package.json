@@ -1,22 +1,21 @@
 {
-  "name": "list-app",
+  "name": "list_soft_9.11.2",
   "version": "1.0.0",
-  "description": "",
+  "description": "Progateの学習を通して作成した、Node.jsアプリです。\r 簡単なタスクリスト？のようなものになっています。\r main.jsなどなどにpackage用の設定をしているので、electronでexe化できます。",
   "main": "main.js",
   "dependencies": {
-    "better-sqlite3": "^7.1.1",
     "ejs": "^3.1.5",
     "express": "^4.17.1",
     "mysql": "^2.18.1",
+    "nodemon": "^2.0.4",
     "sqlite3": "^5.0.0"
   },
   "devDependencies": {
-    "@types/sqlite3": "^3.1.6",
-    "electron": "^1.4.13",
-    "electron-builder": "^22.8.1",
+    "electron": "^10.1.2",
+    "electron-builder": "^20.10.0",
+    "electron-packager": "^15.1.0",
     "electron-rebuild": "^2.0.3",
-    "gulp": "^4.0.2",
-    "gulp-ejs": "^5.1.0"
+    "gyp": "^0.5.0"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",

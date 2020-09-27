@@ -27,18 +27,19 @@ const connection = mysql.createConnection({
 // database setup: sqlite3
 const sqlite = require('sqlite3').verbose();                                          
 const db = new sqlite.Database('mydata.sqlite');
+
+// database setup: sqlite3 better
 // const Database = require('better-sqlite3');
 // const db = new Database('mydata2.sqlite', { verbose: console.log });
 
-// db.prepare(`
-// CREATE TABLE IF NOT EXISTS list_soft (
-// id INTEGER PRIMARY KEY AUTOINCREMENT  NOT NULL,
-// reg_user varchar(100) NOT NULL,
-// softName varchar(100) NOT NULL, 
-// sAbout longtext NOT NULL,
-// sPurpose longtext NOT NULL, 
-// flag_arc varchar(10) DEFAULT NULL)`).run()
-
+db.run(`
+CREATE TABLE IF NOT EXISTS list_soft (
+id INTEGER PRIMARY KEY AUTOINCREMENT  NOT NULL,
+reg_user varchar(100) NOT NULL,
+softName varchar(100) NOT NULL, 
+sAbout longtext NOT NULL,
+sPurpose longtext NOT NULL, 
+flag_arc varchar(10) DEFAULT NULL)`)
 
 
 // server
@@ -60,6 +61,11 @@ app.get('/index', (req, res) => {
       res.render('index.ejs', {items: results});
     }
   );
+
+  // const stmt = db.prepare('SELECT * FROM list_soft WHERE flag_arc is NULL');
+  // const list_soft = stmt.all();
+  // res.render('index.ejs', {items: list_soft});
+
 });
 
 app.get('/index_cmp', (req, res) => {
@@ -84,6 +90,11 @@ app.post('/create', (req, res) => {
       res.redirect('/index');
     }
   );
+  // const stmt = db.prepare('INSERT INTO list_soft (reg_user, softName, sAbout, sPurpose) VALUES(?,?,?,?)');
+  // const info = stmt.run(req.body.reg_user, req.body.softName, req.body.sAbout, req.body.sPurpose);
+  // console.log(info.changes); 
+  // res.redirect('/index');
+
 });
 
 
