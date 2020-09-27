@@ -1,3 +1,5 @@
+node_module/electron/*
+dist/*
 dist/builder-effective-config.yaml
 dist/latest.yml
 dist/list-app Setup 1.0.0.exe
