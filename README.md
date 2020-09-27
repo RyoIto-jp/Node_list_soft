@@ -43,6 +43,8 @@ CREATE TABLE list_app.items (
 ENGINE=InnoDB
 DEFAULT CHARSET=utf8mb4
 COLLATE=utf8mb4_unicode_ci;
+
+ALTER TABLE list_app.list_soft ADD flag_arc varchar(10) NULL;
 ```
 
 `INSERT INTO list_app.items (name) VALUES('');`
