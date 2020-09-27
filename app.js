@@ -37,10 +37,17 @@ app.get('/', (req, res) => {
 });
 
 app.get('/index', (req, res) => {
-  // データベースからデータを取得する処理を書いてください
   connection.query(
-    'SELECT * FROM list_soft', (error, results) => {
+    'SELECT * FROM list_soft WHERE flag_arc is NULL', (error, results) => {
       res.render('index.ejs', {items: results});
+    }
+  );
+});
+
+app.get('/index_cmp', (req, res) => {
+  connection.query(
+    'SELECT * FROM list_soft WHERE flag_arc = "cmp"', (error, results) => {
+      res.render('index_cmp.ejs', {items: results});
     }
   );
 });
@@ -96,6 +103,22 @@ app.post('/update/:id', (req, res) => {
   );
 });
 
+app.get('/cmp/:id', (req, res) => {
+  let sql;
+  let buf;
+  buf = req.headers.referer;
+  if (buf.indexOf('index_cmp')==-1) {
+    sql = 'UPDATE list_soft SET flag_arc = "cmp" WHERE id = ?';
+  } else {
+    sql = 'UPDATE list_soft SET flag_arc = NULL WHERE id = ?';
+  };
+  connection.query(
+    sql,[req.params.id],
+    (error, results) => {
+      res.redirect(buf);
+    }
+  );
+});
 
 // app.★★('/', (req, res) => {
   

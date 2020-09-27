@@ -169,6 +169,11 @@ header {
   transition: all 0.3s ease;
 }
 
+.header-button{
+  display: flex;
+  align-items: flex-end;
+}
+
 .cancel-button {
   margin-top: 16px;
   margin-left: 2px;
@@ -265,11 +270,12 @@ header {
 }
 
 .col6, .col7, .col8{
-  width: 5%;
+  width: 4%;
   color: #8491a5;
   border-left: none !important;
   border-right: none !important;
   font-size: 10px;
+  padding-left: 4px !important;
 }
 
 .col6 a, .col7 a, .col8 a{
