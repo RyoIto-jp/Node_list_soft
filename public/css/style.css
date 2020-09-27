@@ -6,7 +6,7 @@
 html {
   font-size: 100%;
   font-family: 'Hiragino Sans', sans-serif;
-  line-height: 1.7;
+  line-height: 1.6;
   letter-spacing: 1px;
 }
 
@@ -138,7 +138,7 @@ header {
 
 /* container ================================ */
 .container {
-  width: 70%;
+  width: 90%;
   min-width: 360px;
   max-width: 1350px;
   margin: 0 auto;
@@ -270,12 +270,14 @@ header {
 }
 
 .col6, .col7, .col8{
-  width: 4%;
+  width: 1.5%;
   color: #8491a5;
   border-left: none !important;
   border-right: none !important;
   font-size: 10px;
-  padding-left: 4px !important;
+  padding-top: 5px !important;
+  padding-bottom: 5px !important;
+  /* padding-left: 4px !important; */
 }
 
 .col6 a, .col7 a, .col8 a{
@@ -294,7 +296,7 @@ header {
     /* -webkit-box-shadow: 0 3px 5px rgba(0, 0, 0, .3); */
   /* その他色・サイズ */
   background-color: #e5fcfd;
-
+  display: inline-block;
 
 }
 

@@ -247,3 +247,16 @@ cp -r コピーするディレクトリ名 新しいディレクトリ名
 rm {filename}
 rm -r {dir}
 ```
+
+## sqlite
+
+npm install sqlite3
+
+CREATE TABLE list_app.items (
+	id int auto_increment NOT NULL,
+	name varchar(100) NOT NULL,
+	CONSTRAINT id PRIMARY KEY (id)
+)
+ENGINE=InnoDB
+DEFAULT CHARSET=utf8mb4
+COLLATE=utf8mb4_unicode_ci;

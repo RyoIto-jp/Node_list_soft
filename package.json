@@ -4,19 +4,24 @@
   "description": "",
   "main": "main.js",
   "dependencies": {
+    "better-sqlite3": "^7.1.1",
     "ejs": "^3.1.5",
     "express": "^4.17.1",
-    "mysql": "^2.18.1"
+    "mysql": "^2.18.1",
+    "sqlite3": "^5.0.0"
   },
   "devDependencies": {
-    "electron": "1.4.13",
+    "@types/sqlite3": "^3.1.6",
+    "electron": "^1.4.13",
     "electron-builder": "^22.8.1",
+    "electron-rebuild": "^2.0.3",
     "gulp": "^4.0.2",
     "gulp-ejs": "^5.1.0"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": ".\\node_modules\\.bin\\nodemon app.js"
+    "start": ".\\node_modules\\.bin\\nodemon app.js",
+    "postinstall": "install-app-deps"
   },
   "keywords": [],
   "author": "",

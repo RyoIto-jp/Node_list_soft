@@ -24,6 +24,23 @@ const connection = mysql.createConnection({
   database: 'list_app'
 });
 
+// database setup: sqlite3
+const sqlite = require('sqlite3').verbose();                                          
+const db = new sqlite.Database('mydata.sqlite');
+// const Database = require('better-sqlite3');
+// const db = new Database('mydata2.sqlite', { verbose: console.log });
+
+// db.prepare(`
+// CREATE TABLE IF NOT EXISTS list_soft (
+// id INTEGER PRIMARY KEY AUTOINCREMENT  NOT NULL,
+// reg_user varchar(100) NOT NULL,
+// softName varchar(100) NOT NULL, 
+// sAbout longtext NOT NULL,
+// sPurpose longtext NOT NULL, 
+// flag_arc varchar(10) DEFAULT NULL)`).run()
+
+
+
 // server
 app.listen(3000, "127.0.0.1");
 
@@ -37,7 +54,8 @@ app.get('/', (req, res) => {
 });
 
 app.get('/index', (req, res) => {
-  connection.query(
+  // connection.query(
+  db.all(
     'SELECT * FROM list_soft WHERE flag_arc is NULL', (error, results) => {
       res.render('index.ejs', {items: results});
     }
@@ -45,7 +63,8 @@ app.get('/index', (req, res) => {
 });
 
 app.get('/index_cmp', (req, res) => {
-  connection.query(
+  // connection.query(
+  db.all(
     'SELECT * FROM list_soft WHERE flag_arc = "cmp"', (error, results) => {
       res.render('index_cmp.ejs', {items: results});
     }
@@ -57,9 +76,8 @@ app.get('/new', (req, res) => {
 });
 
 app.post('/create', (req, res) => {
-  // データベースに追加する処理を書いてください
-  console.log(req.body.itemName);
-  connection.query(
+  // connection.query(
+  db.run(
     'INSERT INTO list_soft (reg_user, softName, sAbout, sPurpose) VALUES(?,?,?,?)',
     [req.body.reg_user,req.body.softName,req.body.sAbout,req.body.sPurpose],
     (error, results) => {
@@ -71,7 +89,8 @@ app.post('/create', (req, res) => {
 
 app.get('/delete/:id', (req, res) => {
   console.log(req.params.id);
-  connection.query(
+  // connection.query(
+  db.run(
     'DELETE FROM list_soft WHERE id = ?',
     [req.params.id],
     (error, results) => {
@@ -82,7 +101,8 @@ app.get('/delete/:id', (req, res) => {
 
 app.get('/edit/:id', (req, res) => {
   console.log(req.params.id);
-  connection.query(
+  // connection.query(
+  db.all(
     'SELECT * FROM list_soft WHERE id = ?',
     [req.params.id],
     (error, results) => {
@@ -94,7 +114,8 @@ app.get('/edit/:id', (req, res) => {
 app.post('/update/:id', (req, res) => {
   console.log(req.body.itemName);
   console.log(req.params.id);
-  connection.query(
+  // connection.query(
+  db.run(
     'UPDATE list_soft SET reg_user = ?, softName = ?, sAbout = ?, sPurpose = ? WHERE id = ?',
     [req.body.reg_user,req.body.softName,req.body.sAbout,req.body.sPurpose, req.params.id],
     (error, results) => {
@@ -112,7 +133,8 @@ app.get('/cmp/:id', (req, res) => {
   } else {
     sql = 'UPDATE list_soft SET flag_arc = NULL WHERE id = ?';
   };
-  connection.query(
+  // connection.query(
+  db.run(
     sql,[req.params.id],
     (error, results) => {
       res.redirect(buf);

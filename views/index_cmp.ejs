@@ -43,20 +43,13 @@
               <td class='col4'><%= item.sAbout %></td>
               <td class='col5'><%= item.sPurpose %></td>
               
-            <div class="item-menu">
-              <td class='col6'>
-                <a href="/edit/<%= item.id %>">
-                  編集
-                </a>
-              </td>
-              <td class='col7'>
-                <a href="/delete/<%= item.id %>" 
-                  onClick="disp('<%= item.id %>'); return false;" >
-                  削除</a>
-              </td>
-              <td class='col8'>
-                <a href="/cmp/<%= item.id %>">戻す</a></td>
-            </div>
+              <div class="item-menu">
+                <td class='col6'>
+                  <a href="/edit/<%= item.id %>">編集</a>
+                  <a href="/delete/<%= item.id %>" 
+                    onClick="disp('<%= item.id %>'); return false;" >削除</a>
+                  <a href="/cmp/<%= item.id %>">完了</a></td>
+              </div>
           </tr>
         <% }) %>
       </table>
