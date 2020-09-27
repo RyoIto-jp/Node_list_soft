@@ -1,4 +1,8 @@
 # Node_list_soft
+Progateの学習を通して作成した、Node.jsアプリです。
+簡単なタスクリスト？のようなものになっています。
+main.jsなどなどにpackage用の設定をしているので、electronでexe化できます。
+
 
 <link href="http://jasonm23.github.io/markdown-css-themes/markdown.css" rel="stylesheet"></link>
 
