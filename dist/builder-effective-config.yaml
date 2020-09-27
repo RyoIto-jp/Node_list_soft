@@ -1,7 +1,0 @@
-directories:
-  output: dist
-  buildResources: build
-appId: local.test.app1
-win:
-  target: nsis
-electronVersion: 1.4.13
